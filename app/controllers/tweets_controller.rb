@@ -9,7 +9,13 @@ class TweetsController < ApplicationController
     end
 
     def create
-      Tweet.create(image: tweet_params[:image], text: tweet_params[:text], user_id: current_user.id)
+      tweet = Tweet.new(image: tweet_params[:image], text: tweet_params[:text], user_id: current_user.id)
+      if tweet.save
+        flash[:notice] = "メッセージ送信成功"
+      else
+        flash.now[:alert] = "メッセージ送信失敗"
+        render "new"
+      end
     end
 
     def destroy
@@ -27,6 +33,9 @@ class TweetsController < ApplicationController
       tweet = Tweet.find(params[:id])
       if tweet.user_id == current_user.id
         tweet.update(tweet_params)
+      else
+        flash[:alert] = "他のユーザーの投稿の編集はできません"
+        redirect_to action: :index
       end
     end
 

@@ -409,6 +409,21 @@ embed {
   -webkit-font-smoothing: antialiased;
 }
 
+.notice {
+  text-align: center;
+  color: white;
+  background-color: #3397bd;
+  margin-bottom: 10px;
+}
+
+.alert {
+  text-align: center;
+  color: #fff;
+  background-color: #57c3e9;
+  margin-bottom: 10px;
+}
+
+
 img {
   display: inline-block;
   vertical-align: middle;

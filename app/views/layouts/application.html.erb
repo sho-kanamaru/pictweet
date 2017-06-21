@@ -23,6 +23,7 @@
 
   <body>
     <header class="header">
+    <%= render partial: "common/flashmessage" %>
     <div class="header__bar row">
       <h1 class="grid-6"><a href="/">PicTweet</a></h1>
       <% if user_signed_in? %>

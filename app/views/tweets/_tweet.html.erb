@@ -3,7 +3,7 @@
         <span><%= image_tag 'arrow_top.png' %></span>
           <ul class="more_list">
             <li>
-              <%= link_to '詳細', "/tweets/#{tweet.id}", method: :get %>
+              <%= link_to '詳細', tweet_path(tweet.id), method: :get %>
             </li>
             <% if user_signed_in? && current_user.id == tweet.user_id %>
               <li>
