@@ -9,3 +9,7 @@ end
   def comment_params
     params.permit(:text, :tweet_id)
   end
+
+
+
+  
